@@ -71,6 +71,8 @@ def target_communication(target, ip):
             print(termcolor.colored('''\n
             quit                                --> Quit Session With The Target
             clear                               --> Clear The Screen
+            shutdown                            --> Shutdwon Victims computer
+            screenshot                          --> Takes screenshot and saves to the same directory
             cd *Directory Name*                 --> Changes Directory On Target System
             upload *file name*                  --> Upload File To The target Machine
             download *file name*                --> Download File From Target Machine
